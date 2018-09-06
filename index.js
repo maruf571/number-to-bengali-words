@@ -64,7 +64,7 @@ var number2WordMap = {
     52 : "বাহান্ন", 
     53 : "তেপ্পান্ন", 
     54 : "চুয়ান্ন", 
-    5 : "পঞ্চান্ন", 
+    55 : "পঞ্চান্ন", 
     56 : "ছাপ্পান্ন", 
     57 : "সাতান্ন", 
     58 : "আটান্ন", 
@@ -173,11 +173,11 @@ function generateWords(number) {
     } 
     else if (number < ONE_THOUSAND) {
         remainder = number % ONE_HUNDRED;
-        word = number2WordMap[Math.floor(number/ONE_HUNDRED)] + number2WordMap[ONE_HUNDRED];
+        word = number2WordMap[Math.floor(number / ONE_HUNDRED)] + number2WordMap[ONE_HUNDRED];
     }
     else if (number < ONE_LAC) {
         remainder = number % ONE_THOUSAND;
-        word = number2WordMap[Math.floor(number/ONE_THOUSAND)] + number2WordMap[ONE_THOUSAND];
+        word = number2WordMap[Math.floor(number / ONE_THOUSAND)] + number2WordMap[ONE_THOUSAND];
     }
     else if (number < ONE_CORE) {
         remainder = number % ONE_LAC;
