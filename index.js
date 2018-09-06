@@ -119,23 +119,32 @@ var number2WordMap = {
 };
 
 exports.toBengaliWords = function(number) {
-    console.log("start converting " + number + " to bengai words");
-
+   
     var words;
-    var num = parseInt(number, 10);
 
-    if (!isFinite(num)) {
+    if (!isFinite(number)) {
         throw new TypeError(
             'Not a finite number: ' + number + ' (' + typeof number + ')'
         );
     }
-    if (!isSafeNumber(num)) {
+    if (!isSafeNumber(number)) {
         throw new RangeError(
             'Input is not a safe number, it’s either too large or too small.'
         );
     }
 
+    console.log("start converting " + number + " to bengai words");
+
+    var num = parseInt(number, 10);
     words = generateWords(num);
+
+    if(!isInt(number)){
+        var point =  number.toString().split(".")[1];
+        words +=  DECIMAL;
+        for(var i=0; i<point.length; i++){
+            words += ' ' +number2WordMap[point[i]];
+        }
+    }
     console.log(words);
     return words;
 }
@@ -154,7 +163,7 @@ function generateWords(number) {
     }
 
     if (number < 0) {
-        words.push(negative);
+        words.push(NEGATIVE);
         number = Math.abs(number);
     }
 
@@ -176,7 +185,7 @@ function generateWords(number) {
     }
     else if (number < ONE_BILLION) {
         remainder = number % ONE_CORE;
-        word = generateWords(Math.floor(number / ONE_MILLION)) + number2WordMap[ONE_CORE];
+        word = generateWords(Math.floor(number / ONE_CORE)) + number2WordMap[ONE_CORE];
     }
     else if (number < ONE_TRILLION) {
         remainder = number % ONE_BILLION;
@@ -203,3 +212,7 @@ var MAX_SAFE_INTEGER = 9007199254740991;
 function isSafeNumber(value) {
     return typeof value === 'number' && Math.abs(value) <= MAX_SAFE_INTEGER;
 }
+
+function isInt(n) {
+    return n % 1 === 0;
+ }
