@@ -1,8 +1,10 @@
 # English number to Bengali word converter
 This is a JavaScript lib to conver english number to Bengali words. 
 Example:
+```
 571 > পাঁচশত একাত্তর
 3.14 > তিন দশমিক  এক চার
+```
 
 ### Prerequisites
 * Node 
