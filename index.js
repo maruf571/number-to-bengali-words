@@ -1,5 +1,5 @@
 var NEGATIVE = 'ঋণাত্মক ';
-var DECIMAL = ' দশমিক ';
+var DECIMAL = ' দশমিক';
 var ONE_HUNDRED = 100;
 var ONE_THOUSAND = 1000;
 var ONE_LAC = 100000;
@@ -145,7 +145,6 @@ exports.toBengaliWords = function(number) {
             words += ' ' +number2WordMap[point[i]];
         }
     }
-    console.log(words);
     return words;
 }
 
@@ -177,27 +176,27 @@ function generateWords(number) {
     }
     else if (number < ONE_LAC) {
         remainder = number % ONE_THOUSAND;
-        word = number2WordMap[Math.floor(number / ONE_THOUSAND)] + number2WordMap[ONE_THOUSAND];
+        word = number2WordMap[Math.floor(number / ONE_THOUSAND)] + ' ' + number2WordMap[ONE_THOUSAND];
     }
     else if (number < ONE_CORE) {
         remainder = number % ONE_LAC;
-        word = number2WordMap[Math.floor(number/ONE_LAC)] + number2WordMap[ONE_LAC];
+        word = number2WordMap[Math.floor(number/ONE_LAC)] + ' ' + number2WordMap[ONE_LAC];
     }
     else if (number < ONE_BILLION) {
         remainder = number % ONE_CORE;
-        word = generateWords(Math.floor(number / ONE_CORE)) + number2WordMap[ONE_CORE];
+        word = generateWords(Math.floor(number / ONE_CORE)) + ' ' + number2WordMap[ONE_CORE];
     }
     else if (number < ONE_TRILLION) {
         remainder = number % ONE_BILLION;
-        word = generateWords(Math.floor(number / ONE_BILLION)) + number2WordMap[ONE_BILLION];
+        word = generateWords(Math.floor(number / ONE_BILLION)) + ' ' + number2WordMap[ONE_BILLION];
     }
     else if (number < ONE_QUADRILLION) {
         remainder = number % ONE_TRILLION;
-        word = generateWords(Math.floor(number / ONE_TRILLION)) + number2WordMap[ONE_TRILLION];
+        word = generateWords(Math.floor(number / ONE_TRILLION)) + ' ' + number2WordMap[ONE_TRILLION];
     }
     else if (number <= MAX) {
         remainder = number % ONE_QUADRILLION;
-        word = generateWords(Math.floor(number / ONE_QUADRILLION)) + number2WordMap[ONE_QUADRILLION]
+        word = generateWords(Math.floor(number / ONE_QUADRILLION)) + ' ' + number2WordMap[ONE_QUADRILLION]
     }
     words.push(word);
     return generateWords(remainder, words);
