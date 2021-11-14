@@ -1,5 +1,5 @@
 # English number to Bengali word converter
-This is a JavaScript lib to conver english number to Bengali words. 
+This is a JavaScript lib to convert a english number to Bengali words. 
 Example:
 ```
 571 > পাঁচশত একাত্তর
