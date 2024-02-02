@@ -3,7 +3,7 @@ This is a JavaScript lib to convert a english number to Bengali words.
 Example:
 ```
 571 > পাঁচশত একাত্তর
-3.14 > তিন দশমিক  এক চার
+3.14 > তিন দশমিক এক চার
 ```
 
 ### Prerequisites
@@ -12,16 +12,21 @@ Example:
 ## Install
 ```
 npm i number-to-bengli-words
-```
+``` 
 
 ## Running
 ```
 var numberToBengliWords = require("number-to-bengli-words");
 numberToBengliWords.toBengaliWords(3.14);
 ```
+## Test
+```
+npm install
+jest
+```
 
 ## Authors
-* **Maruf Hassan**
+* **Mahmudul Hassan**
 
 ## License
 This project is licensed under the ISC License
