@@ -179,8 +179,8 @@ test('test non number', () => {
 });
 
 
-test('test non number', () => {
+test('test los small number', () => {
     expect(() => {
         numberToBengaliWords.toBengaliWords(0.0000001);
-    }).toThrow('Cannot read properties of undefined (reading \'length\')');
+    }).toThrow('points is not iterable');
 });
