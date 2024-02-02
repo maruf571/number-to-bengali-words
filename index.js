@@ -124,7 +124,7 @@ exports.toBengaliWords = function(number) {
     let words;
 
 
-    if (!isFinite(number)) {
+    if (!isValidNumber(number)) {
         throw new TypeError(
             'Not a finite number: ' + number + ' (' + typeof number + ')'
         );
@@ -142,10 +142,10 @@ exports.toBengaliWords = function(number) {
     words = generateWords(num);
 
     if(!isInt(number)){
-        const point = number.toString().split(`.`)[1];
+        const points = number.toString().split(`.`)[1];
         words +=  DECIMAL;
-        for(let i=0; i < point.length; i++){
-            words += ' ' +number2WordMap[point[i]];
+        for(let point of points){
+            words += ' ' +number2WordMap[point];
         }
     }
     return words;
@@ -199,8 +199,8 @@ function generateWords(number) {
 }
 
 
-function isFinite(value) {
-    return !(typeof value !== 'number' || value !== value || value === Infinity || value === -Infinity);
+function isValidNumber(value) {
+    return !(typeof value !== 'number' || Number.isNaN(value) || value === Infinity || value === -Infinity);
 }
 
 

@@ -181,6 +181,6 @@ test('test non number', () => {
 
 test('test non number', () => {
     expect(() => {
-        const result = numberToBengaliWords.toBengaliWords(0.0000001);
+        numberToBengaliWords.toBengaliWords(0.0000001);
     }).toThrow('Cannot read properties of undefined (reading \'length\')');
 });
