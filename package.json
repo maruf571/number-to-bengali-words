@@ -4,7 +4,7 @@
   "description": "This is a javascript converter to convert number to Bengali words",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/maruf571/number-to-bengali-words/issues"
   },
-  "homepage": "https://github.com/maruf571/number-to-bengali-words#readme"
+  "homepage": "https://github.com/maruf571/number-to-bengali-words#readme",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
 }
