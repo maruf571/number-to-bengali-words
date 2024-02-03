@@ -12,7 +12,7 @@ This is a JavaScript lib to convert english number to Bengali words.
 3.14 > তিন দশমিক এক চার
 ```
 
-### Prerequisites
+## Prerequisites
 * NodeJs 
 
 ## Install
@@ -28,7 +28,8 @@ numberToBengliWords.toBengaliWords(3.14);
 
 ## Test
 ```
-clone https://github.com/maruf571/number-to-bengali-words.git
+git clone https://github.com/maruf571/number-to-bengali-words.git
+cd number-to-bengali-words
 npm install
 jest
 ```
