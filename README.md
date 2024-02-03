@@ -4,7 +4,9 @@
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=maruf571_number-to-bengali-words&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=maruf571_number-to-bengali-words)
 
 This is a JavaScript lib to convert english number to Bengali words. 
-Example:
+
+
+## Example:
 ```
 571 > পাঁচশত একাত্তর
 3.14 > তিন দশমিক এক চার
