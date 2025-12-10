@@ -1,6 +1,6 @@
 {
   "name": "number-to-bengli-words",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "This is a javascript converter to convert number to Bengali words",
   "main": "index.js",
   "scripts": {
