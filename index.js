@@ -1,9 +1,16 @@
+/**
+ * Number to Bengali Words Converter
+ * Converts English numbers to Bengali words representation
+ * @module number-to-bengali-words
+ */
+
+
 const NEGATIVE = 'ঋণাত্মক';
 const DECIMAL = ' দশমিক';
 const ONE_HUNDRED = 100;
 const ONE_THOUSAND = 1000;
 const ONE_LAC = 100000;
-const ONE_CORE = 10000000;
+const ONE_CRORE = 10000000;
 const ONE_BILLION = 1000000000;
 const ONE_TRILLION = 1000000000000;
 const ONE_QUADRILLION = 1000000000000000;
@@ -136,7 +143,6 @@ exports.toBengaliWords = function(number) {
         );
     }
 
-    console.log(`Start converting ` + number + ` to Bengali words`);
 
     const num = parseInt(number, 10);
     words = generateWords(num);
@@ -178,12 +184,12 @@ function generateWords(number) {
     } else if (number < ONE_LAC) {
         remainder = number % ONE_THOUSAND;
         word = number2WordMap[Math.floor(number / ONE_THOUSAND)] + ' ' + number2WordMap[ONE_THOUSAND];
-    } else if (number < ONE_CORE) {
+    } else if (number < ONE_CRORE) {
         remainder = number % ONE_LAC;
         word = number2WordMap[Math.floor(number/ONE_LAC)] + ' ' + number2WordMap[ONE_LAC];
     } else if (number < ONE_BILLION) {
-        remainder = number % ONE_CORE;
-        word = generateWords(Math.floor(number / ONE_CORE)) + ' ' + number2WordMap[ONE_CORE];
+        remainder = number % ONE_CRORE;
+        word = generateWords(Math.floor(number / ONE_CRORE)) + ' ' + number2WordMap[ONE_CRORE];
     } else if (number < ONE_TRILLION) {
         remainder = number % ONE_BILLION;
         word = generateWords(Math.floor(number / ONE_BILLION)) + ' ' + number2WordMap[ONE_BILLION];
@@ -209,5 +215,5 @@ function isSafeNumber(value) {
 }
 
 function isInt(n) {
-    return n % 1 === 0;
+    return Number.isInteger(n);
  }
